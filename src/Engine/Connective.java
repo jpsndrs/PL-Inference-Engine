@@ -41,16 +41,16 @@ public enum Connective {
 		return getSymbol();
 	}	
 
-	public static boolean isConnective(String symbol) {
-		if (NEGATION.getSymbol().equals(symbol)) {
+	public static boolean isConnective(String aSymbol) {
+		if (NEGATION.getSymbol().equals(aSymbol)) {
 			return true;
-		} else if (CONJUNCTON.getSymbol().equals(symbol)) {
+		} else if (CONJUNCTON.getSymbol().equals(aSymbol)) {
 			return true;
-		} else if (DISJUNCTION.getSymbol().equals(symbol)) {
+		} else if (DISJUNCTION.getSymbol().equals(aSymbol)) {
 			return true;
-		} else if (IMPLICATION.getSymbol().equals(symbol)) {
+		} else if (IMPLICATION.getSymbol().equals(aSymbol)) {
 			return true;
-		} else if (BICONDITIONAL.getSymbol().equals(symbol)) {
+		} else if (BICONDITIONAL.getSymbol().equals(aSymbol)) {
 			return true;
 		}
 		return false;

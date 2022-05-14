@@ -10,10 +10,10 @@ package Engine;
 public class Token {
 	
 	private int    fType;
-	private char fText;
+	private String fText;
 	private int    fStartPosition;
 
-	public Token(int aType, char aText, int aStartPosition) {
+	public Token(int aType, String aText, int aStartPosition) {
 		this.fType = aType;
 		this.fText = aText;
 		this.fStartPosition = aStartPosition;
@@ -27,7 +27,7 @@ public class Token {
 		return fText;
 	}	
 
-	public int getStartCharPositionInInput() {
+	public int getCharPosition() {
 		return fStartPosition;
 	}
 
