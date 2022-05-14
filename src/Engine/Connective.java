@@ -73,6 +73,14 @@ public enum Connective {
 				"Not a valid symbol for a connective: " + aSymbol);
 	}
 	
+	public static boolean isConnectiveIdentifierStart(char aChar) {
+		return fLeadingChars.contains(aChar);
+	}
+
+	public static boolean isConnectiveIdentifierPart(char aChar) {
+		return fChars.contains(aChar);
+	}
+	
 	@SafeVarargs
 	private static <Character> Set<Character> createSet(Character... aValues) {
 		Set<Character> lSet = new LinkedHashSet<>();

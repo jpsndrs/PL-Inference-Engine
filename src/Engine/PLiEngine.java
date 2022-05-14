@@ -7,6 +7,13 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.Reader;
+import java.io.StringReader;
+import java.nio.charset.Charset;
+import java.util.ArrayList;
+import java.util.List;
+
+import COS30019.Block;
 
 /**
  * @author jmsps
@@ -31,6 +38,25 @@ public class PLiEngine {
 				String[] str = myString.split(";");
 				for(String subStr:str) 
 					System.out.println(subStr);
+				
+				//start of test code
+				List<Token> fToken = new ArrayList<Token>();
+				
+				int symbol[] = new int[myString.length()];
+				Reader stread = new StringReader(myString);
+				
+				for(int i = 0; i < myString.length(); i++) {
+					symbol[i] = stread.read();
+					System.out.print((char)symbol[i]);
+					
+					fToken.add(new Token(symbol[i], (char)symbol[i], i));
+					
+				}
+				
+				
+				
+				
+				//end of test code
 				
 				//function PL-RESOLUTION(KB,a) returns true or false
 				//inputs: KB, the knowledge base, a sentence in propositional logic
