@@ -7,12 +7,12 @@ package Engine;
  * @author jmsps
  *
  */
-public class ActionQuery extends Sentence{
+public class AgentAction {
 
 	/**
 	 * 
 	 */
-	public ActionQuery() {
+	public AgentAction() {
 		// TODO Auto-generated constructor stub
 	}
 

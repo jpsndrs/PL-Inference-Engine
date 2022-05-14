@@ -10,7 +10,7 @@ package Engine;
  * This is the Knowledge-Based (KB) Agent Class
  * Which contains two private fields, and one public method.
  * */
-public class KB_Agent {
+public class KBAgent {
 	
 	/***
 	 * Private fields.
@@ -25,25 +25,25 @@ public class KB_Agent {
 	 * Class Constructor
 	 * @param none, this is the default constructor.
 	 * */
-	public KB_Agent() {
+	public KBAgent() {
 		fKB = new KB();
 		fT = 0;
 	}
 	
-	pubilc Action KBAgent(Percept aPercept){
+	pubilc AgentAction runKBAgent(AgentPercept aPercept) {
 		
 		tell(fKB, makePerceptSentence(aPercept, fT));
-		Action lAction = ask(fKB, makeActionQuery(fT));
+		AgentAction lAction = ask(fKB, makeActionQuery(fT));
 		tell(fKB, makeActionSentence(lAction, fT));
 		fT++;
 		return lAction;
 	}
 	
-	private void makePerceptSentence(Percept aPercept, int aT) {
+	private void makePerceptSentence(AgentPercept aPercept, int aT) {
 		
 	}
 	
-	private void makeActionSentence(Action aAction, int aT) {
+	private void makeActionSentence(AgentAction aAction, int aT) {
 		
 	}
 	
@@ -59,7 +59,7 @@ public class KB_Agent {
 		
 	}
 	
-	private Action ask(KB aKB, ActionQuery aSentence) {
+	private AgentAction ask(KB aKB, ActionQuery aSentence) {
 		
 	}
 }
