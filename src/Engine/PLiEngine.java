@@ -48,17 +48,19 @@ public class PLiEngine {
 				for(int i = 0; i < myString.length(); i++) {
 					symbol[i] = stread.read();
 					System.out.print((char)symbol[i]);
-					if((char)symbol[i] == '(') {
+					
+					
+					/*if((char)symbol[i] == '(') {
 						fToken.add(new Token(symbol[i], "(", i));
 					}else if((char)symbol[i] == ')') {
 						fToken.add(new Token(symbol[i], ")", i));
-					}else if ((char)symbol[i] == '')
+					}else if ((char)symbol[i] == '')*/
 					
 				}
-				for(Token lToken:fToken) {
+				/*for(Token lToken:fToken) {
 
 					
-				}
+				}*/
 				
 				
 				
