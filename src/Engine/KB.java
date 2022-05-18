@@ -1,24 +1,23 @@
 package Engine;
 
+import java.io.BufferedReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 
-
+/**
+ * @author James Sanders
+ * @author Riley Underwood
+ * */
 public class KB {
-	private List<Sentence> fSentences = new ArrayList<>();
-	
-	public void tell(String aSentence) {
-		tell((Sentence) parser.parse(aSentence));
-		
-	}
-	
-	public void tell(Sentence aSentence) {
-		if (!(fSentences.contains(aSentence))) {
-			fSentences.add(aSentence);
-			asCNF = asCNF.extend(ConvertToConjunctionOfClauses.apply(aSentence).getClauses());
-			symbols.addAll(SymbolCollector.getSymbolsFrom(aSentence));
-		}
-	}
 
+	private List<String> fClause = new ArrayList<>();
+
+	public void tell(BufferedReader aFileData) throws IOException {
+		String lSentence = aFileData.readLine();
+		String[] lClause = lSentence.split(";");
+		for(String subStr:lClause)
+			fClause.add(subStr.strip());
+	}
 }

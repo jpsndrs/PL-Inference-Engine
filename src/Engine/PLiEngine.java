@@ -28,43 +28,28 @@ public class PLiEngine {
 		
 		try
 		{
+			KB fKB = new KB();
 			FileReader fReader = new FileReader(args[0]);
 			BufferedReader fFileData = new BufferedReader(fReader);
-			String myString = fFileData.readLine();
+			String fData = fFileData.readLine();
 			
-			switch(myString) {
-			case "TELL":
-				myString = fFileData.readLine();
-				String[] str = myString.split(";");
-				for(String subStr:str) 
-					System.out.println(subStr);
+			if(fData.matches("TELL")) {
+				fKB.tell(fFileData);
+			}else if(fData.matches("ASK")) {
 				
-				//start of test code
-				List<Token> fToken = new ArrayList<Token>();
-				
-				int symbol[] = new int[myString.length()];
-				Reader stread = new StringReader(myString);
-				
-				for(int i = 0; i < myString.length(); i++) {
-					symbol[i] = stread.read();
-					System.out.print((char)symbol[i]);
-					
-					
-					/*if((char)symbol[i] == '(') {
-						fToken.add(new Token(symbol[i], "(", i));
-					}else if((char)symbol[i] == ')') {
-						fToken.add(new Token(symbol[i], ")", i));
-					}else if ((char)symbol[i] == '')*/
-					
-				}
-				/*for(Token lToken:fToken) {
+			}
 
-					
-				}*/
-				
-				
-				
-				//end of test code
+			/*
+			//start of test code
+			List<Token> lToken = new ArrayList<Token>();
+			
+			int symbol[] = new int[myString.length()];
+			Reader stread = new StringReader(myString);
+			
+			for(int i = 0; i < myString.length(); i++) {
+				symbol[i] = stread.read();
+				System.out.print((char)symbol[i]);
+				*/
 				
 				//function PL-RESOLUTION(KB,a) returns true or false
 				//inputs: KB, the knowledge base, a sentence in propositional logic
@@ -79,13 +64,7 @@ public class PLiEngine {
 				//if new =c clauses then return false
 				//clauses =clauses unew
 				
-				
-				break;
-			case "ASK":
-				break;
-			default:
-				break;
-			}
+
 		}
         catch(FileNotFoundException ex)
         {
