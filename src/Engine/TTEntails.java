@@ -12,11 +12,11 @@ import aima.core.util.Util;
 
 /**
  * @author James Sanders
- *
+ * @author Riley Underwood
  */
 public class TTEntails {
 
-	public boolean isEntailed(KB aKb, Sentence aAlpha) {
+	public boolean isEntailed(KB aKb, String aAlpha) {
 		// symbols <- a list of proposition symbols in KB and &alpha
 		List<PropositionSymbol> symbols = new ArrayList<PropositionSymbol>(
 				SymbolCollector.getSymbolsFrom(kb.asSentence(), alpha));

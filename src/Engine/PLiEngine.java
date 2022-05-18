@@ -13,16 +13,15 @@ import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.List;
 
-
-
 /**
- * @author jmsps
- *
- */
+ * @author James Sanders
+ * @author Riley Underwood
+ * /
 public class PLiEngine {
 
 	/**
-	 * @param args
+	 * @param args[0] <method>
+	 * @param args[1] <filename>
 	 */
 	public static void main(String[] args) {
 		

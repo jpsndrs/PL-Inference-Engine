@@ -1,5 +1,9 @@
 package Engine;
 
+/**
+ * @author James Sanders
+ * @author Riley Underwood
+ */
 public class HornClause {
 
 	private String fBody;

@@ -5,11 +5,15 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import aima.core.logic.propositional.inference.TTEntails;
+import aima.core.logic.propositional.parsing.PLParser;
+import aima.core.logic.propositional.parsing.ast.Sentence;
+
 
 /**
  * @author James Sanders
  * @author Riley Underwood
- * */
+ */
 public class KB {
 
 	private List<HornClause> fKB;
@@ -40,6 +44,21 @@ public class KB {
 		
 	public List<HornClause> getKB() {
 		return fKB;
+	}
+	
+	/**
+	 * Returns the answer to the specified question using the TT-Entails
+	 * algorithm.
+	 * 
+	 * @param queryString
+	 *            a question to ASK the knowledge base
+	 * 
+	 * @return the answer to the specified question using the TT-Entails
+	 *         algorithm.
+	 */
+	public boolean askWithTTEntails(String aQueryString) {
+
+		return new TTEntails().isEntailed(this, aQueryString);
 	}
 	
 }
