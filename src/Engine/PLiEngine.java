@@ -13,7 +13,7 @@ import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.List;
 
-import COS30019.Block;
+
 
 /**
  * @author jmsps
@@ -54,6 +54,7 @@ public class PLiEngine {
 				symbol[i] = stread.read();
 				System.out.print((char)symbol[i]);
 				*/
+				
 				
 				//function PL-RESOLUTION(KB,a) returns true or false
 				//inputs: KB, the knowledge base, a sentence in propositional logic
