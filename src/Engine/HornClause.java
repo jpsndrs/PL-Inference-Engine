@@ -1,18 +1,15 @@
 package Engine;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class HornClause {
-	
+
 	private String fBody;
 	private String fHead;
-	
+
 	public HornClause(String aBody, String aHead) {
 		this.fBody = aBody;
 		this.fHead = aHead;
 	}
-	
+
 	public HornClause(String aHead) {
 		this.fBody = new String();
 		this.fHead = aHead;
@@ -45,8 +42,5 @@ public class HornClause {
 	public void setHead(String fHead) {
 		this.fHead = fHead;
 	}
-	
-	//@Override
-	//public String toString() {}
 
 }
