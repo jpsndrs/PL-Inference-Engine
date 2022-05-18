@@ -28,15 +28,19 @@ public class PLiEngine {
 		
 		try
 		{
+			
 			KB fKB = new KB();
 			FileReader fReader = new FileReader(args[0]);
 			BufferedReader fFileData = new BufferedReader(fReader);
 			String fData = fFileData.readLine();
 			
 			if(fData.matches("TELL")) {
-				fKB.tell(fFileData);
-			}else if(fData.matches("ASK")) {
-				
+				fData = fFileData.readLine();
+				fKB.tell(fData);
+			}
+			fData = fFileData.readLine();
+			if(fData.matches("ASK")) {
+				System.out.println(fData);
 			}
 
 			/*
