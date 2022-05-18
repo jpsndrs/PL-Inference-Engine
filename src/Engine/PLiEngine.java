@@ -59,19 +59,30 @@ public class PLiEngine {
 				System.out.print((char)symbol[i]);
 				*/
 				
-				
-				//function PL-RESOLUTION(KB,a) returns true or false
-				//inputs: KB, the knowledge base, a sentence in propositional logic
-				//a, the query, a sentence in propositional logic
-				//clauses =the set of clauses in the CNF representation of KB & ¬a
-				//new ={ }
-				//while true do
-				//for each pair of clauses Ci, Cj in clauses do
-				//resolvents =PL-RESOLVE(Ci,Cj )
-				//if resolvents contains the empty clause then return true
-				//new =new u resolvents
-				//if new =c clauses then return false
-				//clauses =clauses unew
+			//main
+			  /*if (args.length != 3) {
+			        System.out.println("Arguments missing.");
+			        System.out.println("iengine <method> <filename>");
+			
+			        exit(1);
+			    }
+			
+			    switch (args[0]) {
+			    
+			    }
+			    if (lMethod == "TT")
+			    {
+			        TruthTable TT(lFile.GetClauses(), lFile.GetQuery(), lFile.GetSymbols(), lFile.GetSubClauses());
+			    }
+			    else if (lMethod == "FC")
+			    {
+			        ForwardChaining FC(lFile.GetClauses(), lFile.GetQuery());
+			    }
+			    else if (lMethod == "BC")
+			    {
+			        BackwardChaining BC(lFile.GetClauses(), lFile.GetQuery());
+			    }*/
+			    
 				
 
 		}
