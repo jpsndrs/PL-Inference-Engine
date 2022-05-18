@@ -46,6 +46,13 @@ public class PLiEngine {
 				System.out.println(fData);
 				//debug end
 			}
+			
+			//debug start
+			for(HornClause element : fKB.getKB()) {
+				System.out.println(element.getBody() + "=>" + element.getHead());
+			}
+			
+			//debug end
 
 			/*
 			//start of test code

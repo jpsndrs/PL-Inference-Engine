@@ -1,18 +1,18 @@
 /**
  * 
  */
-package Engine;
+package NotUsingDeleteLater;
 
 /**
  * @author jmsps
  *
  */
-public class AgentAction {
+public class ActionSentence extends Sentence {
 
 	/**
 	 * 
 	 */
-	public AgentAction() {
+	public ActionSentence() {
 		// TODO Auto-generated constructor stub
 	}
 

@@ -1,10 +1,12 @@
-package Engine;
+package NotUsingDeleteLater;
 /**
  * @author James P. Sanders
  * @author Riley J. Underwood
  * @since 03/05/2022
  * @version 0.1
  * */
+
+import Engine.KB;
 
 /**
  * This is the Knowledge-Based (KB) Agent Class
@@ -26,7 +28,7 @@ public class KBAgent {
 	 * @param none, this is the default constructor.
 	 * */
 	public KBAgent() {
-		fKB = new KB();
+		this.fKB = new KB();
 		fT = 0;
 	}
 	

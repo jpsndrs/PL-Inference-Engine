@@ -1,18 +1,18 @@
 /**
  * 
  */
-package Engine;
+package NotUsingDeleteLater;
 
 /**
  * @author jmsps
  *
  */
-public class AgentPercept {
+public class DataLoader {
 
 	/**
 	 * 
 	 */
-	public AgentPercept() {
+	public DataLoader() {
 		// TODO Auto-generated constructor stub
 	}
 

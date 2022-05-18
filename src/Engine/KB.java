@@ -28,24 +28,18 @@ public class KB {
 		for(String dataElement:lData) {
 			//check length, if it's not bigger than two, if true it has no body.
 			//implication only.
-			if(dataElement.length() > 2) {
+			if(dataElement.strip().length() > 2) {
 				lHornClause = dataElement.split("=>");
-				
+				fKB.add(new HornClause(lHornClause[0].strip(), lHornClause[1].strip()));				
 			}else {
 				//else set to head.
+				fKB.add(new HornClause(dataElement.strip()));	
 			}
 		}
-		
-		/*String[] lClause = aSentence.split(";");
-		for(String subStr:lClause) {
-			fClause.add(subStr.strip());
-			//debug
-			System.out.println("Knowledgebase:");
-			System.out.println(subStr.strip());
-			System.out.println("");
-			//debug end
-		}*/
 	}
-	
+		
+	public List<HornClause> getKB() {
+		return fKB;
+	}
 	
 }

@@ -2,6 +2,8 @@ package Engine;
 
 import java.util.ArrayList;
 
+import NotUsingDeleteLater.Connective;
+
 public class Clause {
 	
 	ArrayList<Connective> connectives = null; 

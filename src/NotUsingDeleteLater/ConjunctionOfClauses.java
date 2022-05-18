@@ -1,9 +1,11 @@
-package Engine;
+package NotUsingDeleteLater;
 
 import java.util.Collection;
 import java.util.Collections;
 import java.util.LinkedHashSet;
 import java.util.Set;
+
+import Engine.Clause;
 
 /**
  * Artificial Intelligence A Modern Approach (3rd Edition): page 253.<br>

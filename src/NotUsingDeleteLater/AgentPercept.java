@@ -1,18 +1,18 @@
 /**
  * 
  */
-package Engine;
+package NotUsingDeleteLater;
 
 /**
  * @author jmsps
  *
  */
-public class PerceptSentence extends Sentence {
+public class AgentPercept {
 
 	/**
 	 * 
 	 */
-	public PerceptSentence() {
+	public AgentPercept() {
 		// TODO Auto-generated constructor stub
 	}
 

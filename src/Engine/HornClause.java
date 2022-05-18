@@ -5,8 +5,8 @@ import java.util.List;
 
 public class HornClause {
 	
-	private static String fBody;
-	private static String fHead;
+	private String fBody;
+	private String fHead;
 	
 	public HornClause(String aBody, String aHead) {
 		this.fBody = aBody;
@@ -19,32 +19,34 @@ public class HornClause {
 	}
 
 	/**
-	 * @return the fBody
+	 * @return the Body
 	 */
-	public static String getBody() {
+	public String getBody() {
 		return fBody;
 	}
 
 	/**
-	 * @param fBody the fBody to set
+	 * @param Body the Body to set
 	 */
-	public static void setBody(String fBody) {
-		HornClause.fBody = fBody;
+	public void setBody(String fBody) {
+		this.fBody = fBody;
 	}
 
 	/**
-	 * @return the fHead
+	 * @return the Head
 	 */
-	public static String getHead() {
+	public String getHead() {
 		return fHead;
 	}
 
 	/**
-	 * @param fHead the fHead to set
+	 * @param Head the fHead to set
 	 */
-	public static void setHead(String fHead) {
-		HornClause.fHead = fHead;
+	public void setHead(String fHead) {
+		this.fHead = fHead;
 	}
 	
+	//@Override
+	//public String toString() {}
 
 }

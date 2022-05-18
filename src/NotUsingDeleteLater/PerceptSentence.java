@@ -1,18 +1,18 @@
 /**
  * 
  */
-package Engine;
+package NotUsingDeleteLater;
 
 /**
  * @author jmsps
  *
  */
-public class ActionSentence extends Sentence {
+public class PerceptSentence extends Sentence {
 
 	/**
 	 * 
 	 */
-	public ActionSentence() {
+	public PerceptSentence() {
 		// TODO Auto-generated constructor stub
 	}
 
