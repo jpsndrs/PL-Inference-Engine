@@ -16,21 +16,20 @@ import aima.core.util.Util;
  */
 public class TTEntails {
 
-	public boolean isEntailed(KB aKb, String aAlpha) {
+	public boolean isEntailed(KB aKB, String aAlpha) {
 		// symbols <- a list of proposition symbols in KB and &alpha
-		List<PropositionSymbol> symbols = new ArrayList<PropositionSymbol>(
-				SymbolCollector.getSymbolsFrom(kb.asSentence(), alpha));
+		List<String> lSymbols = new ArrayList<String>( PropositionCollector.getSymbolsFrom( aKB ) );
 
 		// return TT-CHECK-ALL(KB, &alpha; symbols, {})
-		return ttCheckAll(kb, alpha, symbols, new Model());
+		return ttCheckAll(aKB, aAlpha, lSymbols, new Model());
 	}
 
-	public boolean ttCheckAll(KB aKb, Sentence aAlpha, List<PropositionSymbol> symbols, Model model) {
+	public boolean ttCheckAll(KB aKB, String aAlpha, List<String> aSymbols, Model aModel) {
 		// if EMPTY?(symbols) then
-		if (symbols.isEmpty()) {
+		if (aSymbols.isEmpty()) {
 			// if PL-TRUE?(KB, model) then return PL-TRUE?(&alpha;, model)
-			if (model.isTrue(kb.asSentence())) {
-				return model.isTrue(alpha);
+			if (aModel.isTrue(aKB.getKB())) {
+				return aModel.isTrue(aAlpha);
 			} else {
 				// else return true // when KB is false, always return true
 				return true;
