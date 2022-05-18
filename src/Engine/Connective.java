@@ -1,17 +1,16 @@
 /**
- * 
+ *
  */
 package Engine;
 
-import java.util.Collection;
 import java.util.Collections;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
-/**
+/*
  * @author James Sanders
- *
- */
+ * @author Riley Underwood
+ **/
 public enum Connective {
 	// i.e. highest to lowest precedence.
 	NEGATION("~", 10),  //~ for negation
@@ -27,7 +26,7 @@ public enum Connective {
 		this.fSymbol = symbol;
 		this.fPrecedence = precedence;
 	}
-	
+
 	public String getSymbol() {
 		return fSymbol;
 	}
@@ -39,7 +38,7 @@ public enum Connective {
 	@Override
 	public String toString() {
 		return getSymbol();
-	}	
+	}
 
 	public static boolean isConnective(String aSymbol) {
 		if (NEGATION.getSymbol().equals(aSymbol)) {
@@ -55,7 +54,7 @@ public enum Connective {
 		}
 		return false;
 	}
-	
+
 	public static Connective get(String aSymbol) {
 		if (NEGATION.getSymbol().equals(aSymbol)) {
 			return NEGATION;
@@ -72,7 +71,7 @@ public enum Connective {
 		throw new IllegalArgumentException(
 				"Not a valid symbol for a connective: " + aSymbol);
 	}
-	
+
 	public static boolean isConnectiveIdentifierStart(char aChar) {
 		return fLeadingChars.contains(aChar);
 	}
@@ -80,7 +79,7 @@ public enum Connective {
 	public static boolean isConnectiveIdentifierPart(char aChar) {
 		return fChars.contains(aChar);
 	}
-	
+
 	@SafeVarargs
 	private static <Character> Set<Character> createSet(Character... aValues) {
 		Set<Character> lSet = new LinkedHashSet<>();

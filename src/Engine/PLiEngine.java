@@ -40,7 +40,11 @@ public class PLiEngine {
 			}
 			fData = fFileData.readLine();
 			if(fData.matches("ASK")) {
+				//debug
 				System.out.println(fData);
+				fData = fFileData.readLine();
+				System.out.println(fData);
+				//debug end
 			}
 
 			/*
