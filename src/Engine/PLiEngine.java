@@ -51,6 +51,13 @@ public class PLiEngine {
 				System.out.println(element.getBody() + "=>" + element.getHead());
 			}
 			
+			
+			
+			
+			//Create the truth table. 
+			TruthTable TT = new TruthTable(fKB);
+			
+				
 			//debug end
 
 			/*
