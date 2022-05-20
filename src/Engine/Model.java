@@ -35,16 +35,21 @@ public class Model {
 	public boolean isTrue(String aSymbol) {
 		//TODO
 		//return true if symbol is true
-		return bool;
+		//return bool;
 	}
 
 	/**
 	 * @return boolean
 	 * */
-	public boolean isTrue(List<String> aSymbols) {
+	public boolean isTrue(List<HornClause> aKB) {
 		//TODO
+		for(HornClause element : aKB) {
+			if(element.getBody().matches("TRUE")) {
+				
+			}
+		}
 		//return true if symbols are true
-		return true;
+		//return bool;
 	}
 
 	public Model union(String aSymbol, Boolean aBool) {
