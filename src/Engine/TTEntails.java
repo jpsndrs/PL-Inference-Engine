@@ -20,7 +20,7 @@ public class TTEntails {
 		// if EMPTY?(symbols) then
 		if (aSymbols.isEmpty()) {
 			// if PL-TRUE?(KB, model) then return PL-TRUE?(&alpha;, model)
-			if (aModel.isTrue(aKB.getSymbols())) {
+			if (aModel.isTrue(aKB.getKB())) {
 				return aModel.isTrue(aAlpha);
 			} else {
 				// else return true // when KB is false, always return true
