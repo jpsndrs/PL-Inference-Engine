@@ -1,13 +1,8 @@
 package Engine;
 
-import java.io.BufferedReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-
-import aima.core.logic.propositional.inference.TTEntails;
-import aima.core.logic.propositional.parsing.PLParser;
-import aima.core.logic.propositional.parsing.ast.Sentence;
 
 
 /**
@@ -16,17 +11,18 @@ import aima.core.logic.propositional.parsing.ast.Sentence;
  */
 public class KB {
 
+	//Add  the knowledge base
 	private List<HornClause> fKB;
 	//Add the symbols
-	private ArrayList<String> symbols = new ArrayList<String>();
-	
+	private ArrayList<String> fSymbols;
+
 	KB() {
 		fKB = new ArrayList<>();
-		
+		fSymbols = new ArrayList<>();
 	}
 
 	public void tell(String aSentence) throws IOException {
-		
+
 		//string array to temporarily hold each horn clause
 		String[] lData = aSentence.split(";");
 		//string array to temporarily hold each side of horn clause.
@@ -37,74 +33,77 @@ public class KB {
 			//implication only.
 			if(dataElement.strip().contains("=>")) {
 				lHornClause = dataElement.split("=>");
-				fKB.add(new HornClause(lHornClause[0].strip(), lHornClause[1].strip()));	
-				
+				fKB.add(new HornClause(lHornClause[0].strip(), lHornClause[1].strip()));
+
 				//Add the symbols of the lhs & rhs of HornClause
 				addSymbol(lHornClause[0].strip());
 				addSymbol(lHornClause[1].strip());
 			}else {
 				//else set to head.
-				fKB.add(new HornClause(dataElement.strip()));	
+				fKB.add(new HornClause(dataElement.strip()));
 				//Add the symbols of the dataElement
 				addSymbol(dataElement.strip());
 			}
-			
-		
+
+
 		}
-		
-//		//Add to symbols if there is a new symbol. 
+
+//		//Add to symbols if there is a new symbol.
 //		add
 	}
-	
+
+	/**
+	 * get symbols
+	 * @return symbols
+	 * */
+	public ArrayList<String> getSymbols(){
+		return fSymbols;
+	}
+
 	//Attempts to add new symbol to the KB
-	public void addSymbol(String symbolString) {
-	
-		String[] symbolStringSymbols = null;
+	private void addSymbol(String aSymbolString) {
+
+		String[] lSymbolStringSymbols = null;
 		//Single Symbol
-		if(!symbolString.contains("&") && !symbolString.contains("||") && !symbolString.contains("&")) {
-			symbolStringSymbols = new String[1];
-			symbolStringSymbols[0] = symbolString;
+		if(!aSymbolString.contains("&") && !aSymbolString.contains("||") && !aSymbolString.contains("&")) {
+			lSymbolStringSymbols = new String[1];
+			lSymbolStringSymbols[0] = aSymbolString;
 		}
 		else {
 			//Multiple symbols within symbol string
 			//Symbol string may contain negation ~ conjunction & or disjunction ||
 			//If that is the case then there is multiple symbols in symbolString
-			if(symbolString.contains("||")) {
-				symbolStringSymbols = symbolString.split("||"); 
+			if(aSymbolString.contains("||")) {
+				lSymbolStringSymbols = aSymbolString.split("||");
 			}
-			if(symbolString.contains("~")) {
-				symbolStringSymbols = symbolString.split("~"); 
+			if(aSymbolString.contains("~")) {
+				lSymbolStringSymbols = aSymbolString.split("~");
 			}
-			if(symbolString.contains("&")) {
-				symbolStringSymbols = symbolString.split("&"); 
+			if(aSymbolString.contains("&")) {
+				lSymbolStringSymbols = aSymbolString.split("&");
 			}
 		}
 		//Add the symbols only if they don't already exist
-		for(String symbol: symbolStringSymbols) {
-			if(!symbols.contains(symbol)) {
-				symbols.add(symbol);
+		for(String symbol: lSymbolStringSymbols) {
+			if(!fSymbols.contains(symbol)) {
+				fSymbols.add(symbol);
 			}
 		}
 	}
-		
-	
+
+
 	public List<HornClause> getKB() {
 		return fKB;
 	}
-	
-	public List<String> getSymbols(){
-		return symbols;
-		
-	}
-	
-	
+
+
 	/**
 	 * Returns the answer to the specified question using the TT-Entails
 	 * algorithm.
-	 * 
+	 *
 	 * @param queryString
 	 *            a question to ASK the knowledge base
-	 * 
+	 *
 	 * @return the answer to the specified question using the TT-Entails
 	 *         algorithm.
 	 */
@@ -112,5 +111,5 @@ public class KB {
 
 		return new TTEntails().isEntailed(this, aQueryString);
 	}
-	
+
 }
