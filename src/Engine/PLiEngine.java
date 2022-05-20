@@ -46,20 +46,28 @@ public class PLiEngine {
 				//debug end
 			}
 			
-			//debug start
+			//test start
 			for(HornClause element : fKB.getKB()) {
 				System.out.println(element.getBody() + "=>" + element.getHead());
 			}
 			
+			for(String symbol : fKB.getSymbols()) {
+				
+				System.out.print(symbol);
+				System.out.print(", ");
+			}
 			
-			
+			//TODO
+			//fKB.askWithTTEntails("d");
 			
 			//Create the truth table. 
-			TruthTable TT = new TruthTable(fKB);
+			//TruthTable TT = new TruthTable(fKB);
 			
 				
-			//debug end
+			//test end
 
+			
+			
 			/*
 			//start of test code
 			List<Token> lToken = new ArrayList<Token>();
