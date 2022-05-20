@@ -32,6 +32,7 @@ public class KB {
 			//check length, if it's not bigger than two, if true it has no body.
 			//implication only.
 			if(dataElement.strip().contains("=>")) {
+				//RULE
 				lHornClause = dataElement.split("=>");
 				fKB.add(new HornClause(lHornClause[0].strip(), lHornClause[1].strip()));
 
@@ -39,8 +40,9 @@ public class KB {
 				addSymbol(lHornClause[0].strip());
 				addSymbol(lHornClause[1].strip());
 			}else {
+				//FACT
 				//else set to head.
-				fKB.add(new HornClause(dataElement.strip()));
+				fKB.add(new HornClause("TRUE", dataElement.strip()));
 				//Add the symbols of the dataElement
 				addSymbol(dataElement.strip());
 			}
