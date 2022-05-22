@@ -29,7 +29,10 @@ public class PLiEngine {
 		{
 			
 			KB fKB = new KB();
-			FileReader fReader = new FileReader(args[0]);
+			
+			
+			//FileReader fReader = new FileReader(args[0]);
+			FileReader fReader = new FileReader("hData.txt");
 			BufferedReader fFileData = new BufferedReader(fReader);
 			String fData = fFileData.readLine();
 			
@@ -57,11 +60,13 @@ public class PLiEngine {
 				System.out.print(", ");
 			}
 			
+			
 			//TODO
 			//fKB.askWithTTEntails("d");
 			
 			//Create the truth table. 
-			//TruthTable TT = new TruthTable(fKB);
+			TruthTable TT = new TruthTable(fKB);
+			
 			
 				
 			//test end

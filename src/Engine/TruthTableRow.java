@@ -6,13 +6,16 @@ import java.util.HashMap;
 
 public class TruthTableRow {
 	
-	private ArrayList<HashMap<Clause,Boolean>> items; 
+	private HashMap<Clause,Boolean> items; 
+	
+	public TruthTableRow() {
+		items = new HashMap<Clause,Boolean>();
+	}
 	
 	public void addRowItem(Clause name, Boolean value) {
-		HashMap<Clause,Boolean> item = new HashMap<Clause,Boolean>();
-		item.put(name, value);
 		
-		items.add(item);
+		items.put(name, value);
+	
 	}
 	
 	public ArrayList<HashMap<Clause,Boolean>> getRowItems() {

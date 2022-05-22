@@ -17,6 +17,9 @@ public class TTEntails {
 	}
 
 	public boolean ttCheckAll(KB aKB, String aAlpha, List<String> aSymbols, Model aModel) {
+		
+		
+		
 		// if EMPTY?(symbols) then
 		if (aSymbols.isEmpty()) {
 			// if PL-TRUE?(KB, model) then return PL-TRUE?(&alpha;, model)

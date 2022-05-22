@@ -51,6 +51,7 @@ public class Model {
 		//return true if symbols are true
 		//return bool;
 	}
+	
 
 	public Model union(String aSymbol, Boolean aBool) {
 		Model lModel = new Model();
@@ -58,5 +59,8 @@ public class Model {
 		lModel.fAssignments.put(aSymbol, aBool);
 		return lModel;
 	}
+	
+	
+	
 
 }
