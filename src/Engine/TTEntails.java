@@ -6,6 +6,7 @@ import java.util.List;
  * @author James Sanders
  * @author Riley Underwood
  */
+
 public class TTEntails {
 
 	public boolean isEntailed(KB aKB, String aAlpha) {
@@ -17,7 +18,6 @@ public class TTEntails {
 	}
 
 	public boolean ttCheckAll(KB aKB, String aAlpha, List<String> aSymbols, Model aModel) {
-		
 		
 		
 		// if EMPTY?(symbols) then
@@ -41,5 +41,9 @@ public class TTEntails {
 		// TT-CHECK-ALL(KB, &alpha;, rest, model U { P = false }))
 		return ttCheckAll(aKB, aAlpha, lRest, aModel.union(lP, true))
 				&& ttCheckAll(aKB, aAlpha, lRest, aModel.union(lP, false));
+		
+		
 	}
+	
+	
 }

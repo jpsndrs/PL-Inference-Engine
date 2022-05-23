@@ -68,6 +68,7 @@ public class PLiEngine {
 			TruthTable TT = new TruthTable(fKB);
 			
 			
+			
 				
 			//test end
 
